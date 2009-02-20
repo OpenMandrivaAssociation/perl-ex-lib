@@ -13,6 +13,8 @@ Source:     http://www.cpan.org/modules/by-module/ex/%{realname}-%{version}.tar.
 Url:        http://search.cpan.org/dist/%{realname}
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: perl-devel
+BuildRequires: perl-PathTools
+Provides: perl(ex::lib)
 
 
 BuildArch: noarch
