@@ -1,6 +1,6 @@
 
 %define realname   ex-lib
-%define version    0.06
+%define version    0.07
 %define release    %mkrel 1
 
 Name:       perl-%{realname}
