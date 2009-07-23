@@ -1,29 +1,30 @@
+%define upstream_name    ex-lib
+%define upstream_version 0.90
 
-%define realname   ex-lib
-%define version    0.07
-%define release    %mkrel 1
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
+License:    GPL+ or Artistic
 Group:      Development/Perl
 Summary:    The same as C<lib>, but makes relative path absolute
-Source:     http://www.cpan.org/modules/by-module/ex/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/ex/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl-devel
 BuildRequires: perl-PathTools
+BuildRequires: perl(lib::abs) >= 0.900.0
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildArch: noarch
+Requires: perl(lib::abs) >= 0.900.0
 Provides: perl(ex::lib)
 
-
-BuildArch: noarch
 
 %description
 no description found
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -44,5 +45,4 @@ rm -rf %buildroot
 %doc Changes README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
 
