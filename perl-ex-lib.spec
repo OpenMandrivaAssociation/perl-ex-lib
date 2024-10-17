@@ -8,7 +8,7 @@ Release:	5
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Summary:	The same as C<lib>, but makes relative path absolute
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/ex/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
