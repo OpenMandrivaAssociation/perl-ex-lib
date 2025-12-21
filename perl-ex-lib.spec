@@ -11,6 +11,7 @@ Summary:	The same as C<lib>, but makes relative path absolute
 Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/ex/%{upstream_name}-%{upstream_version}.tar.gz
 
+BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	perl-PathTools
 BuildRequires:	perl(lib::abs) >= 0.900.0
