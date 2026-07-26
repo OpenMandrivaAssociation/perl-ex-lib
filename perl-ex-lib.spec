@@ -1,15 +1,13 @@
 %define upstream_name    ex-lib
-%define upstream_version 0.90
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	6
+Version:	0.90
+Release:	7
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Summary:	The same as C<lib>, but makes relative path absolute
 Url:		https://metacpan.org/dist/ex-lib
-Source0:	https://cpan.metacpan.org/authors/id/M/MO/MONS/ex-lib-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/M/MO/MONS/ex-lib-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -23,7 +21,7 @@ Provides:	perl(ex::lib) = %{version}-%{release}
 The same as C<lib>, but makes relative path absolute
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
